@@ -97,7 +97,7 @@ namespace dotnetCampus.MSBuildUtils
             {
                 if (builder.Length > 0)
                 {
-                    builder.Append(' ');
+                    builder.Append(": ");
                 }
                 builder.Append(Level.ToString().ToLower(CultureInfo.InvariantCulture));
             }
