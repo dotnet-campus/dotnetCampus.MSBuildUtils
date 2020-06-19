@@ -39,7 +39,7 @@ namespace dotnetCampus.MSBuildUtils
         {
             _message = message ?? throw new ArgumentNullException(nameof(message));
             _id = id;
-            _file = new FileInfo(file ?? throw new ArgumentNullException(nameof(file)));
+            _file = file is null ? null : new FileInfo(file);
             _lineStart = lineStart;
             _columnStart = columnStart;
             _lineEnd = lineEnd;
