@@ -16,32 +16,29 @@ namespace dotnetCampus.MSBuildUtils
 
         /// <inheritdoc/>
         public void Warning(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
-            => Output(new MSBuildMessage(message, MessageLevel.Warning, null, filePath, line));
+            => new MSBuildMessage(message, null, filePath, line).Warning();
 
         /// <inheritdoc/>
         public void Warning(string message, string? id = null, string? targetFile = null,
             int? lineStart = null, int? columnStart = null, int? lineEnd = null, int? columnEnd = null)
-            => Output(new MSBuildMessage(message, MessageLevel.Warning, id, targetFile, lineStart, columnStart, lineEnd, columnEnd));
+            => new MSBuildMessage(message, id, targetFile, lineStart, columnStart, lineEnd, columnEnd).Warning();
 
         /// <inheritdoc/>
         public void Error(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
-            => Output(new MSBuildMessage(message, MessageLevel.Error, null, filePath, line));
+            => new MSBuildMessage(message, null, filePath, line).Error();
 
         /// <inheritdoc/>
         public void Error(string message, string? id = null, string? targetFile = null,
             int? lineStart = null, int? columnStart = null, int? lineEnd = null, int? columnEnd = null)
-            => Output(new MSBuildMessage(message, MessageLevel.Error, id, targetFile, lineStart, columnStart, lineEnd, columnEnd));
+            => new MSBuildMessage(message, id, targetFile, lineStart, columnStart, lineEnd, columnEnd).Error();
 
         /// <inheritdoc/>
         public void Throw(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
-            => throw new MSBuildException(new MSBuildMessage(message, MessageLevel.Error, null, filePath, line));
+            => throw new MSBuildException(new MSBuildMessage(message, null, filePath, line));
 
         /// <inheritdoc/>
         public void Throw(string message, string? id = null, string? targetFile = null,
             int? lineStart = null, int? columnStart = null, int? lineEnd = null, int? columnEnd = null)
-            => throw new MSBuildException(new MSBuildMessage(message, MessageLevel.Error, id, targetFile, lineStart, columnStart, lineEnd, columnEnd));
-
-        /// <inheritdoc/>
-        public void Output(MSBuildMessage message) => Console.WriteLine(message);
+            => throw new MSBuildException(new MSBuildMessage(message, id, targetFile, lineStart, columnStart, lineEnd, columnEnd));
     }
 }
