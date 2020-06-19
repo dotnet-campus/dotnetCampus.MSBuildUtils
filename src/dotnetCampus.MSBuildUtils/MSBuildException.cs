@@ -41,9 +41,9 @@ namespace dotnetCampus.MSBuildUtils
         /// </summary>
         /// <param name="message">MSBuild 控制台消息。</param>
         internal MSBuildException(MSBuildMessage message)
-            : base(message?.Message ?? DefaultMessage)
+            : base(message?.ToString(MessageLevel.Error) ?? throw new ArgumentNullException(nameof(message)))
         {
-            MSBuildMessage = message ?? throw new ArgumentNullException(nameof(message));
+            MSBuildMessage = message;
         }
 
         /// <summary>
@@ -52,9 +52,9 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="message">MSBuild 控制台消息。</param>
         /// <param name="innerException">内部异常。</param>
         internal MSBuildException(MSBuildMessage message, Exception innerException)
-            : base(message?.Message ?? DefaultMessage, innerException)
+            : base(message?.ToString(MessageLevel.Error) ?? throw new ArgumentNullException(nameof(message)), innerException)
         {
-            MSBuildMessage = message ?? throw new ArgumentNullException(nameof(message));
+            MSBuildMessage = message;
         }
 
         /// <inheritdoc />

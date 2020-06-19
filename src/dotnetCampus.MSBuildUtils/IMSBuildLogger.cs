@@ -76,11 +76,5 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="columnEnd">报告的让 IDE 跳转到的文件的结束列列号（序号从 1 开始）。</param>
         void Throw(string message, string? id = null, string? targetFile = null,
             int? lineStart = null, int? columnStart = null, int? lineEnd = null, int? columnEnd = null);
-
-        /// <summary>
-        /// 输出消息到 MSBuild 控制台。
-        /// </summary>
-        /// <param name="message">编译消息。</param>
-        void Output(MSBuildMessage message);
     }
 }
