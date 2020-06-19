@@ -66,7 +66,7 @@ namespace dotnetCampus.MSBuildUtils
         {
             Message = message ?? throw new ArgumentNullException(nameof(message));
             Level = level;
-            Id = id ?? throw new ArgumentNullException(nameof(id));
+            Id = id;
             TargetFile = targetFile ?? throw new ArgumentNullException(nameof(targetFile));
             LineStart = lineStart;
             ColumnStart = columnStart;
