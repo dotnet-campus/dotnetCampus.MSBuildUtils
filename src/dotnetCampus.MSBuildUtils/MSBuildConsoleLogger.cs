@@ -15,15 +15,15 @@ namespace dotnetCampus.MSBuildUtils
         }
 
         /// <inheritdoc/>
-        public void Warning(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0)
+        public void Warning(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
             => Output(new MSBuildMessage(message, MessageLevel.Warning, null, filePath, line));
 
         /// <inheritdoc/>
-        public void Error(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0)
+        public void Error(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
             => Output(new MSBuildMessage(message, MessageLevel.Error, null, filePath, line));
 
         /// <inheritdoc/>
-        public void Throw(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0)
+        public void Throw(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1)
         {
             throw new MSBuildException(new MSBuildMessage(message, MessageLevel.Error, null, filePath, line));
         }

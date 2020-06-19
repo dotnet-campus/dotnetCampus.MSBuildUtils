@@ -19,7 +19,7 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="message">编译警告消息。</param>
         /// <param name="filePath">自动传入或手工指定，要报告警告的文件，可用于 Visual Studio 自动定位到目标文件方便调试错误。</param>
         /// <param name="line">自动传入或手工指定，要报告错误的文件的行号，可用于 Visual Studio 自动定位到目标文件的对应位置方便调试错误。</param>
-        void Warning(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0);
+        void Warning(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1);
 
         /// <summary>
         /// 报告编译错误。
@@ -27,7 +27,7 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="message">编译错误消息。</param>
         /// <param name="filePath">自动传入或手工指定，要报告错误的文件，可用于 Visual Studio 自动定位到目标文件方便调试错误。</param>
         /// <param name="line">自动传入或手工指定，要报告错误的文件的行号，可用于 Visual Studio 自动定位到目标文件的对应位置方便调试错误。</param>
-        void Error(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0);
+        void Error(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1);
 
         /// <summary>
         /// 立即抛出异常。除报告编译错误外，立刻停止后续的编译过程。
@@ -36,7 +36,7 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="message">编译错误消息。</param>
         /// <param name="filePath">自动传入或手工指定，要报告错误的文件，可用于 Visual Studio 自动定位到目标文件方便调试错误。</param>
         /// <param name="line">自动传入或手工指定，要报告错误的文件的行号，可用于 Visual Studio 自动定位到目标文件的对应位置方便调试错误。</param>
-        void Throw(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 0);
+        void Throw(string message, [CallerFilePath] string? filePath = null, [CallerLineNumber] int line = 1);
 
         /// <summary>
         /// 输出消息到 MSBuild 控制台。
