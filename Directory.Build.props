@@ -13,6 +13,7 @@
     <Description>当你需要写一个运行于 MSBuild 中的可执行程序，那么会有一堆杂七杂八的脚手架代码需要编写，还需要每次指定如何报告编译错误等。现在有了这个，你就不在需要编写杂七杂八的代码了，专注于你的编译代码吧！</Description>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright © 2020 dotnet campus, All Rights Reserved.</Copyright> 
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>
