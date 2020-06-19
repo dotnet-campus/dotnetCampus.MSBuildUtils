@@ -30,22 +30,22 @@ namespace dotnetCampus.MSBuildUtils
         public string? TargetFile { get; }
 
         /// <summary>
-        /// 获取报告的让 IDE 跳转到的文件的开始行行号。
+        /// 获取报告的让 IDE 跳转到的文件的开始行行号（序号从 1 开始）。
         /// </summary>
         private int? LineStart { get; }
 
         /// <summary>
-        /// 获取报告的让 IDE 跳转到的文件的开始列列号。
+        /// 获取报告的让 IDE 跳转到的文件的开始列列号（序号从 1 开始）。
         /// </summary>
         private int? ColumnStart { get; }
 
         /// <summary>
-        /// 获取报告的让 IDE 跳转到的文件的结束行行号。
+        /// 获取报告的让 IDE 跳转到的文件的结束行行号（序号从 1 开始）。
         /// </summary>
         private int? LineEnd { get; }
 
         /// <summary>
-        /// 获取报告的让 IDE 跳转到的文件的结束列列号。
+        /// 获取报告的让 IDE 跳转到的文件的结束列列号（序号从 1 开始）。
         /// </summary>
         private int? ColumnEnd { get; }
 
@@ -56,10 +56,10 @@ namespace dotnetCampus.MSBuildUtils
         /// <param name="level">消息提示级别。</param>
         /// <param name="id">编译提示/警告/错误的唯一标识符。例如 CS8601，前面使用 2~4 个全大写字母表示编译器代号，后面使用 2~4 个数字表示特定编译警告或错误的编号。</param>
         /// <param name="targetFile">报告的让 IDE 跳转到的文件。</param>
-        /// <param name="lineStart">报告的让 IDE 跳转到的文件的开始行行号。</param>
-        /// <param name="columnStart">报告的让 IDE 跳转到的文件的开始列列号。</param>
-        /// <param name="lineEnd">报告的让 IDE 跳转到的文件的结束行行号。</param>
-        /// <param name="columnEnd">报告的让 IDE 跳转到的文件的结束列列号。</param>
+        /// <param name="lineStart">报告的让 IDE 跳转到的文件的开始行行号（序号从 1 开始）。</param>
+        /// <param name="columnStart">报告的让 IDE 跳转到的文件的开始列列号（序号从 1 开始）。</param>
+        /// <param name="lineEnd">报告的让 IDE 跳转到的文件的结束行行号（序号从 1 开始）。</param>
+        /// <param name="columnEnd">报告的让 IDE 跳转到的文件的结束列列号（序号从 1 开始）。</param>
         public MSBuildMessage(string message, MessageLevel level = MessageLevel.Message,
             string? id = null, string? targetFile = null,
             int? lineStart = null, int? columnStart = null, int? lineEnd = null, int? columnEnd = null)
