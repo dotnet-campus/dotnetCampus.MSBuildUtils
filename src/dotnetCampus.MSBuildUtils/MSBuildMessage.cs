@@ -93,6 +93,19 @@ namespace dotnetCampus.MSBuildUtils
         /// <summary>
         /// 为此消息指定要让 IDE 跳转到文件的行和字符范围。
         /// </summary>
+        /// <param name="line">报告的让 IDE 跳转到的文件的行号（序号从 1 开始）。</param>
+        /// <param name="columnStart">报告的让 IDE 跳转到的文件的开始列列号（序号从 1 开始）。</param>
+        /// <param name="columnEnd">报告的让 IDE 跳转到的文件的结束列列号（序号从 1 开始）。</param>
+        /// <returns>构造器模式。</returns>
+        public MSBuildMessage TextRange(int line, int columnStart, int columnEnd)
+            => BuildArgument(ref _lineStart, line, nameof(line), "开始行号")
+            .BuildArgument(ref _columnStart, columnStart, nameof(columnStart), "开始字符号")
+            .BuildArgument(ref _lineEnd, line, nameof(line), "结束行号")
+            .BuildArgument(ref _columnEnd, columnEnd, nameof(columnEnd), "结束字符号");
+
+        /// <summary>
+        /// 为此消息指定要让 IDE 跳转到文件的行和字符范围。
+        /// </summary>
         /// <param name="lineStart">报告的让 IDE 跳转到的文件的开始行行号（序号从 1 开始）。</param>
         /// <param name="columnStart">报告的让 IDE 跳转到的文件的开始列列号（序号从 1 开始）。</param>
         /// <param name="lineEnd">报告的让 IDE 跳转到的文件的结束行行号（序号从 1 开始）。</param>
