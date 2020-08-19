@@ -69,7 +69,7 @@ namespace dotnetCampus.MSBuildUtils
         /// </summary>
         public void ReportBuildError()
         {
-            Console.WriteLine(MSBuildMessage);
+            MSBuildMessage.Error();
         }
     }
 }
