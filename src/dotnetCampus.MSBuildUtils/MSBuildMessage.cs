@@ -197,7 +197,7 @@ namespace dotnetCampus.MSBuildUtils
         /// <summary>
         /// 构造一个用于输出到 MSBuild 控制台的消息。
         /// </summary>
-        /// <returns>构造好的 MSBuild 控制台消息。可直接使用 Console.WriteLine 输出以产生 MSBuild 编译效果。</returns>
+        /// <returns>用于输出到 MSBuild 控制台的消息；没有警告和错误效果。</returns>
         public override string ToString() => ToString(MessageLevel.Message);
     }
 }
