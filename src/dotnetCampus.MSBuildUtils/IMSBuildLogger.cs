@@ -42,6 +42,7 @@
         /// 如果希望输出此编译错误，请全局捕获异常，然后调用 <see cref="MSBuildException.ReportBuildError"/> 方法。
         /// </summary>
         /// <param name="message">编译错误消息。</param>
+        /// <param name="id">编译提示/警告/错误的唯一标识符。例如 CS8601，前面使用 2~4 个全大写字母表示编译器代号，后面使用 2~4 个数字表示特定编译警告或错误的编号。</param>
         /// <param name="targetFile">报告的让 IDE 跳转到的文件。</param>
         /// <param name="lineStart">报告的让 IDE 跳转到的文件的开始行行号（序号从 1 开始）。</param>
         /// <param name="columnStart">报告的让 IDE 跳转到的文件的开始列列号（序号从 1 开始）。</param>
