@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace dotnetCampus.MSBuildUtils
 {
@@ -55,13 +54,6 @@ namespace dotnetCampus.MSBuildUtils
             : base(message?.ToString(MessageLevel.Error) ?? throw new ArgumentNullException(nameof(message)), innerException)
         {
             MSBuildMessage = message;
-        }
-
-        /// <inheritdoc />
-        protected MSBuildException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-            : base(serializationInfo, streamingContext)
-        {
-            MSBuildMessage = new MSBuildMessage(DefaultMessage);
         }
 
         /// <summary>

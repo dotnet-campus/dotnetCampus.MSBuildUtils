@@ -6,18 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dotnetCampus.SourceYard" Version="0.1.19099-alpha" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="dotnetCampus.CommandLine.Source" Version="3.1.1" />
-    <PackageReference Include="Walterlv.NullableAttributes.Source" Version="5.7.1" />
+    <PackageReference Include="dotnetCampus.SourceYard" Version="1.0.0-alpha03" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="dotnetCampus.CommandLine.Source" Version="3.3.1" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="..\dotnetCampus.MSBuildUtils\**\*.cs" Exclude="..\dotnetCampus.MSBuildUtils\bin\**\*.cs;..\dotnetCampus.MSBuildUtils\obj\**\*.cs" Link="Imports\%(RecursiveDir)%(FileName)%(Extension)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="SourceProject\**" />
   </ItemGroup>
 
 </Project>
